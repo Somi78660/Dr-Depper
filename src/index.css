@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cherry: #7A0019;
+  --color-cherry-dark: #5A0012;
+  --color-brown: #3B1F1F;
+  --color-cream: #F5E6D3;
+  --color-electric: #FF2A2A;
+  --color-bg-dark: #0a0505;
+  
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  .glass-card {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 42, 42, 0.5);
+  }
+  .box-glow {
+    box-shadow: 0 0 30px rgba(255, 42, 42, 0.3);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-bg-dark);
+  color: var(--color-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-bebas);
+  letter-spacing: 0.05em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-cherry);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric);
+}
